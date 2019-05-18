@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace TurtleEnglish.Controllers
 {
-    public class AboutUsController : Controller
+    public class LoginController : Controller
     {
-        // GET: AboutUs
-        public ActionResult AboutUs()
+        // GET: Login
+        public ActionResult Login()
         {
             return View();
         }

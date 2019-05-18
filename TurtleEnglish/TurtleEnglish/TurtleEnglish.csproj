@@ -114,8 +114,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -217,6 +217,30 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Style\LoginStyle\css\css.css" />
+    <Content Include="Style\LoginStyle\images\icons\favicon.ico" />
+    <Content Include="Style\LoginStyle\images\img-01.png" />
+    <Content Include="Style\LoginStyle\js\main.js" />
+    <Content Include="Style\LoginStyle\vendor\animate\animate.css" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\js\popper.js" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Style\LoginStyle\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Style\LoginStyle\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Style\LoginStyle\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Style\LoginStyle\vendor\select2\select2.css" />
+    <Content Include="Style\LoginStyle\vendor\select2\select2.js" />
+    <Content Include="Style\LoginStyle\vendor\select2\select2.min.css" />
+    <Content Include="Style\LoginStyle\vendor\select2\select2.min.js" />
+    <Content Include="Style\LoginStyle\vendor\tilt\tilt.jquery.min.js" />
     <Content Include="Style\webAnimation.css" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
@@ -260,7 +284,14 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\AboutUs\AboutUs.cshtml" />
+    <Content Include="Views\HomePage\AboutUs.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap.min.css.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

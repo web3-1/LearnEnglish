@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 </head>
-<body>
+<body style='background-image: url("../img/slide-doctor-bg.jpg"); background-size:cover'>
     <div class="header" style="">
         <div class="contact1">
             <p>Have any questions? </p>
@@ -34,7 +34,7 @@
             </div>
             <div class="duongke"></div>
             <div class="choice">
-                @Html.ActionLink("About Us", "AboutUs", "AboutUs")
+                @Html.ActionLink("About Us", "AboutUs", "HomePage")
             </div>
             <div class="duongke"></div>
             <div class="choice">
@@ -55,16 +55,17 @@
             <div class="duongke"></div>
             <div class="choice end">
                 @*<?php
-                if (isset($_SESSION['name'])) echo '<a href="/Myprofile.php"> My Profile </a>';
-                else echo '<a href="/Login"> Login </a>';
-                ?>*@
+        if (isset($_SESSION['name'])) echo '<a href="/Myprofile.php"> My Profile </a>';
+        else echo '<a href="/Login"> Login </a>';
+        ?>*@
+                @Html.ActionLink("Sign in/Sign up", "Login", "Login")
             </div>
         </div>
     </div>
-    <div>
+    <div style="height:3em">
             @RenderBody()
     </div>
-
+       
     <footer id="footer">
         <div class="Top">
             <div class="row">
