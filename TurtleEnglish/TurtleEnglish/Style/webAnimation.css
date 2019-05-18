@@ -6,8 +6,9 @@
 .header {
     width: 100%;
     min-height: 700px;
-    background-image: url("slide-doctor-bg.jpg");
-    /*background-repeat: no-repeat;*/
+    background-image: url("../img/slide-doctor-bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
 }

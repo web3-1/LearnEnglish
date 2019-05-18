@@ -4,5 +4,28 @@
     Layout = "~/Views/Shared/TurtleEnglish_layout.cshtml";
 }
 
-<h2>HomePage</h2>
+<div class="content">
+    <p class="topcontent"><span>100 </span>English Lessons</p>
+    <p class="botcontent">Learn English for every situation</p>
+    <p class="botcontent">Join today to access the world's best program for learning English</p>
+    @*<?php if (isset($_SESSION['name'])) {
+    $email = $_SESSION['email'];
+    $sql = "SELECT * from score where email = '$email'";
+    $result = $conn ->query($sql);
+    if($result->num_rows > 0) {
+    echo '<a class="btn" href="Myprofile.php">Learn English Now</a>';
+    } else {
+    echo '<a class="btn" href="firstTest.php">Learn English Now</a>';
+    }
+    } else {
+    echo '<a class="btn" href="/Register.php">Register Now</a>';
+    }
+    ?>*@
+    <a class="btn" href="/Register.php">Register Now</a>
+</div>
+<img src="../img/4.png" alt="" style="position: absolute;
+        bottom: 15px;
+        right: 122px;
+        animation: bottomToTop 1s forwards;">
+
 
