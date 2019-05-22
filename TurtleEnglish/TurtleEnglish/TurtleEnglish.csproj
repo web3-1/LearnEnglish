@@ -367,6 +367,7 @@
     <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Views\HomePage\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
