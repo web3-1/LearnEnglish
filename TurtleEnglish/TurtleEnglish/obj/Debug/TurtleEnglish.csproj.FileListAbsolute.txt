@@ -156,3 +156,16 @@ E:\Deadline\PT&TKPM\Project\LearnEnglish\TurtleEnglish\TurtleEnglish\obj\Debug\T
 E:\Deadline\PT&TKPM\Project\LearnEnglish\TurtleEnglish\TurtleEnglish\obj\Debug\TurtleEnglish.csproj.CopyComplete
 E:\Deadline\PT&TKPM\Project\LearnEnglish\TurtleEnglish\TurtleEnglish\obj\Debug\TurtleEnglish.dll
 E:\Deadline\PT&TKPM\Project\LearnEnglish\TurtleEnglish\TurtleEnglish\obj\Debug\TurtleEnglish.pdb
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\ApplicationInsights.config
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.Agent.Intercept.dll
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.DependencyCollector.dll
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.Web.dll
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.WindowsServer.dll
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.ApplicationInsights.dll
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.DependencyCollector.xml
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.Web.xml
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.WindowsServer.xml
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.ApplicationInsights.xml
