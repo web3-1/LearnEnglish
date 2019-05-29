@@ -23,5 +23,10 @@ namespace TurtleEnglish.Controllers
         {
             return View();
         }
+
+        public ActionResult feedbackManagement()
+        {
+            return View();
+        }
     }
 }
