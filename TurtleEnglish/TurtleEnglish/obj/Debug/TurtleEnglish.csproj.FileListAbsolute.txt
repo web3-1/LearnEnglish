@@ -64,7 +64,6 @@ E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\System.Web.WebPag
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Newtonsoft.Json.xml
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Antlr3.Runtime.pdb
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\obj\Debug\TurtleEnglish.csprojAssemblyReference.cache
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\obj\Debug\TurtleEnglish.csproj.CoreCompileInputs.cache
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\obj\Debug\TurtleEnglish.csproj.CopyComplete
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\obj\Debug\TurtleEnglish.dll

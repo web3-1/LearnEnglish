@@ -25,6 +25,7 @@
     <link href="../Style/AdminPageStyle/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../Style/AdminPageStyle/build/css/custom.min.css" rel="stylesheet">
+    @*@Styles.Render("~/bundles/css")*@
 </head>
 <body class="nav-md">
     <div class="container body">
@@ -59,13 +60,13 @@
                                     <a href="@Url.Action("userManagement", "AdminHomePage")"><i class="fa fa-user"></i> User Management<span class="fa"></span></a>
                                 </li>
                                 <li>
-                                    <a href="@Url.Action("vocabularyManagement", "AdminHomePage")"><i class="fa fa-edit"></i> Vocabulary Management<span class="fa"></span></a>                                  
+                                    <a href="@Url.Action("vocabularyManagement", "AdminHomePage")"><i class="fa fa-edit"></i> Vocabulary Management<span class="fa"></span></a>
                                 </li>
                                 <li>
                                     <a href="@Url.Action("feedbackManagement", "AdminHomePage")"><i class="fa fa-edit"></i> Feedback Management<span class="fa"></span></a>
-                                </li>     
+                                </li>
                             </ul>
-                        </div>             
+                        </div>
                     </div>
                     <!-- /sidebar menu -->
                     <!-- /menu footer buttons -->
@@ -186,7 +187,7 @@
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    
+
                     - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
                 </div>
                 <div class="clearfix"></div>
@@ -233,7 +234,7 @@
     <script src="../Style/AdminPageStyle/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="../Style/AdminPageStyle/build/js/custom.min.js"></script>
-
+    @*@Scripts.Render("~/bundles/js")*@
 </body>
 </html>
 
