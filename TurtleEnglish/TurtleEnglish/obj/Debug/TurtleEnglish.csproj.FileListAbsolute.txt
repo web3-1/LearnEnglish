@@ -168,3 +168,4 @@ E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.Serv
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.Web.xml
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.WindowsServer.xml
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.ApplicationInsights.xml
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\obj\Debug\TurtleEnglish.csprojAssemblyReference.cache
