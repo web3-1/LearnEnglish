@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LearnEnglishModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CommentTopic">
+          <Key>
+            <PropertyRef Name="topic" />
+          </Key>
+          <Property Name="stt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="topic" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserComment">
+          <Key>
+            <PropertyRef Name="stt" />
+          </Key>
+          <Property Name="stt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="topic" Type="nvarchar" MaxLength="255" />
+          <Property Name="comment" Type="nvarchar" MaxLength="255" />
+          <Property Name="dateComment" Type="date" />
+          <Property Name="statusCmt" Type="bit" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="pass" Type="nvarchar" MaxLength="255" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="255" />
+          <Property Name="dateOfBirth" Type="date" />
+          <Property Name="sdt" Type="int" />
+          <Property Name="addr" Type="nvarchar" MaxLength="255" />
+          <Property Name="levelStudy" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Vocabulary">
+          <Key>
+            <PropertyRef Name="word" />
+          </Key>
+          <Property Name="word" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="mean" Type="nvarchar" MaxLength="255" />
+          <Property Name="typeWord" Type="nvarchar" MaxLength="255" />
+          <Property Name="levelStudy" Type="nvarchar" MaxLength="255" />
+          <Property Name="imgURL" Type="nvarchar" MaxLength="255" />
+          <Property Name="soundURL" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_UserComment_CommentTopic">
+          <End Role="CommentTopic" Type="Self.CommentTopic" Multiplicity="0..1" />
+          <End Role="UserComment" Type="Self.UserComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommentTopic">
+              <PropertyRef Name="topic" />
+            </Principal>
+            <Dependent Role="UserComment">
+              <PropertyRef Name="topic" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LearnEnglishModelStoreContainer">
+          <EntitySet Name="CommentTopic" EntityType="Self.CommentTopic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserComment" EntityType="Self.UserComment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vocabulary" EntityType="Self.Vocabulary" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_UserComment_CommentTopic" Association="Self.FK_UserComment_CommentTopic">
+            <End Role="CommentTopic" EntitySet="CommentTopic" />
+            <End Role="UserComment" EntitySet="UserComment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LearnEnglishModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LearnEnglishEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CommentTopics" EntityType="LearnEnglishModel.CommentTopic" />
+          <EntitySet Name="UserComments" EntityType="LearnEnglishModel.UserComment" />
+          <EntitySet Name="UserInfoes" EntityType="LearnEnglishModel.UserInfo" />
+          <EntitySet Name="Vocabularies" EntityType="LearnEnglishModel.Vocabulary" />
+          <AssociationSet Name="FK_UserComment_CommentTopic" Association="LearnEnglishModel.FK_UserComment_CommentTopic">
+            <End Role="CommentTopic" EntitySet="CommentTopics" />
+            <End Role="UserComment" EntitySet="UserComments" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CommentTopic">
+          <Key>
+            <PropertyRef Name="topic" />
+          </Key>
+          <Property Name="stt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="topic" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserComments" Relationship="LearnEnglishModel.FK_UserComment_CommentTopic" FromRole="CommentTopic" ToRole="UserComment" />
+        </EntityType>
+        <EntityType Name="UserComment">
+          <Key>
+            <PropertyRef Name="stt" />
+          </Key>
+          <Property Name="stt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="topic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="comment" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="dateComment" Type="DateTime" Precision="0" />
+          <Property Name="statusCmt" Type="Boolean" />
+          <NavigationProperty Name="CommentTopic" Relationship="LearnEnglishModel.FK_UserComment_CommentTopic" FromRole="UserComment" ToRole="CommentTopic" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="pass" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="fullname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="dateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="sdt" Type="Int32" />
+          <Property Name="addr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="levelStudy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Vocabulary">
+          <Key>
+            <PropertyRef Name="word" />
+          </Key>
+          <Property Name="word" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="mean" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="typeWord" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="levelStudy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="imgURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="soundURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_UserComment_CommentTopic">
+          <End Type="LearnEnglishModel.CommentTopic" Role="CommentTopic" Multiplicity="0..1" />
+          <End Type="LearnEnglishModel.UserComment" Role="UserComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommentTopic">
+              <PropertyRef Name="topic" />
+            </Principal>
+            <Dependent Role="UserComment">
+              <PropertyRef Name="topic" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LearnEnglishModelStoreContainer" CdmEntityContainer="LearnEnglishEntities">
+          <EntitySetMapping Name="CommentTopics">
+            <EntityTypeMapping TypeName="LearnEnglishModel.CommentTopic">
+              <MappingFragment StoreEntitySet="CommentTopic">
+                <ScalarProperty Name="topic" ColumnName="topic" />
+                <ScalarProperty Name="stt" ColumnName="stt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserComments">
+            <EntityTypeMapping TypeName="LearnEnglishModel.UserComment">
+              <MappingFragment StoreEntitySet="UserComment">
+                <ScalarProperty Name="statusCmt" ColumnName="statusCmt" />
+                <ScalarProperty Name="dateComment" ColumnName="dateComment" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="topic" ColumnName="topic" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="stt" ColumnName="stt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfoes">
+            <EntityTypeMapping TypeName="LearnEnglishModel.UserInfo">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="levelStudy" ColumnName="levelStudy" />
+                <ScalarProperty Name="addr" ColumnName="addr" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="username" ColumnName="username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vocabularies">
+            <EntityTypeMapping TypeName="LearnEnglishModel.Vocabulary">
+              <MappingFragment StoreEntitySet="Vocabulary">
+                <ScalarProperty Name="soundURL" ColumnName="soundURL" />
+                <ScalarProperty Name="imgURL" ColumnName="imgURL" />
+                <ScalarProperty Name="levelStudy" ColumnName="levelStudy" />
+                <ScalarProperty Name="typeWord" ColumnName="typeWord" />
+                <ScalarProperty Name="mean" ColumnName="mean" />
+                <ScalarProperty Name="word" ColumnName="word" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
