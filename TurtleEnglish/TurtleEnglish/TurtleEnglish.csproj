@@ -4924,6 +4924,8 @@
     <Content Include="Style\AdminPageStyle\src\scss\daterangepicker.scss" />
     <Content Include="Views\AdminHomePage\feedbackManagement.cshtml" />
     <Content Include="Views\AdminHomePage\feedbackAdd.cshtml" />
+    <Content Include="Views\AdminHomePage\feedbackEdit.cshtml" />
+    <Content Include="Views\AdminHomePage\commentEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

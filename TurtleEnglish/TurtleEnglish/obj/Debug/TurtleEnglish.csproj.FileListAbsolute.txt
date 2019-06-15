@@ -169,3 +169,7 @@ E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.Web.
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.WindowsServer.xml
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.ApplicationInsights.xml
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\obj\Debug\TurtleEnglish.csprojAssemblyReference.cache
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\EntityFramework.dll
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\EntityFramework.SqlServer.dll
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\EntityFramework.xml
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\EntityFramework.SqlServer.xml

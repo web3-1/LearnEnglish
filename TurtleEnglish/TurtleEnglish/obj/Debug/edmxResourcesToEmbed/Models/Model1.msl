@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LearnEnglishModelStoreContainer" CdmEntityContainer="LearnEnglishEntities">
+    <EntitySetMapping Name="CommentTopics">
+      <EntityTypeMapping TypeName="LearnEnglishModel.CommentTopic">
+        <MappingFragment StoreEntitySet="CommentTopic">
+          <ScalarProperty Name="topic" ColumnName="topic" />
+          <ScalarProperty Name="stt" ColumnName="stt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserComments">
+      <EntityTypeMapping TypeName="LearnEnglishModel.UserComment">
+        <MappingFragment StoreEntitySet="UserComment">
+          <ScalarProperty Name="statusCmt" ColumnName="statusCmt" />
+          <ScalarProperty Name="dateComment" ColumnName="dateComment" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="topic" ColumnName="topic" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="stt" ColumnName="stt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfoes">
+      <EntityTypeMapping TypeName="LearnEnglishModel.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="levelStudy" ColumnName="levelStudy" />
+          <ScalarProperty Name="addr" ColumnName="addr" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vocabularies">
+      <EntityTypeMapping TypeName="LearnEnglishModel.Vocabulary">
+        <MappingFragment StoreEntitySet="Vocabulary">
+          <ScalarProperty Name="soundURL" ColumnName="soundURL" />
+          <ScalarProperty Name="imgURL" ColumnName="imgURL" />
+          <ScalarProperty Name="levelStudy" ColumnName="levelStudy" />
+          <ScalarProperty Name="typeWord" ColumnName="typeWord" />
+          <ScalarProperty Name="mean" ColumnName="mean" />
+          <ScalarProperty Name="word" ColumnName="word" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

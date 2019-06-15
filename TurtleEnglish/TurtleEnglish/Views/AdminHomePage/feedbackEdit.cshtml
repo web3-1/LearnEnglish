@@ -1,15 +1,15 @@
 ﻿@model TurtleEnglish.Models.CommentTopic
+
 @{
-    ViewBag.Title = "feedbackAdd";
+    ViewBag.Title = "feedbackEdit";
     Layout = "~/Views/Shared/TurtleEnglish_adminLayoutPage.cshtml";
 }
-
 <div class="right_col" role="main">
     <div class="row" style="padding: 50px;">
         <div class="col-md-12" style="padding-left: 150px; padding-right: 150px;">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2 style="width: 80%;">Add New Feedback Topic</h2>
+                    <h2 style="width: 80%;">Edit Feedback Topic</h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li>
                             <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -23,13 +23,15 @@
                 </div>
                 <div class="x_content">
                     <!-- start project list -->
-                    @using (Html.BeginForm("feedbackAdd", "AdminHomePage", FormMethod.Post))
+                    @using (Html.BeginForm())
                     {
+                        @Html.AntiForgeryToken()
                         <form>
                             <div class="form-group">
                                 <label>Topic</label>
                                 @*<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter feedback topic">*@
-                                @Html.TextBoxFor(Model => Model.topic, new { @class = "form-control", @placeholder = "Input Topic Here" })
+                                @Html.EditorFor(model => model.topic, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.topic, "", new { @class = "text-danger" })
                             </div>
 
                             <div style="display: flex;align-items: center;justify-content: center;">
@@ -47,3 +49,5 @@
         </div>
     </div>
 </div>
+
+

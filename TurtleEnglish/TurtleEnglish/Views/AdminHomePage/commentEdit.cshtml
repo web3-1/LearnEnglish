@@ -1,0 +1,91 @@
+﻿@model TurtleEnglish.Models.UserComment
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/TurtleEnglish_adminLayoutPage.cshtml";
+}
+
+<div class="right_col" role="main">
+    <div class="row" style="padding: 50px;">
+        <div class="col-md-12" style="padding-left: 150px; padding-right: 150px;">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 style="width: 80%;">Edit Feedback Topic</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+
+                        <li>
+                            <a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <!-- start project list -->
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.stt)
+
+                            <div class="form-group">
+                                <label>@Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2", disabled = "disabled", @readonly = "readonly" })</label>
+
+                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    @Html.LabelFor(model => model.topic, "topic", htmlAttributes: new { @class = "control-label col-md-2" })
+                                </label>
+                                @Html.DropDownList("topic", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.topic, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    @Html.LabelFor(model => model.comment, htmlAttributes: new { @class = "control-label col-md-2" })
+                                </label>
+                                @Html.EditorFor(model => model.comment, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.comment, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    @Html.LabelFor(model => model.dateComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                                </label>
+                                @Html.EditorFor(model => model.dateComment, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.dateComment, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    @Html.LabelFor(model => model.statusCmt, htmlAttributes: new { @class = "control-label col-md-2" })
+                                </label>
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.statusCmt)
+                                    @Html.ValidationMessageFor(model => model.statusCmt, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div style="display: flex;align-items: center;justify-content: center;">
+                                <input onclick="location.href='@Url.Action("feedbackManagement", "AdminHomePage", new {})'" type="button" style="float:right;margin-right:20px; background:#b8b894; border:#b8b894;" class="btn btn-primary" value="Return" />
+                                <button style="float:right;margin-left:20px;" type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+
+                        @Html.Raw(TempData["msg"])
+
+                    }
+
+                    <!-- end project list -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
