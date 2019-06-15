@@ -30,6 +30,7 @@ create table UserInfo(
 	fullname nvarchar(255),
 	dateOfBirth date,
 	sdt int, 
+	addr nvarchar(255),
 	levelStudy nvarchar(255)
 )
 
