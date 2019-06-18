@@ -27,7 +27,7 @@ namespace TurtleEnglish.Models
     
         public virtual DbSet<CommentTopic> CommentTopics { get; set; }
         public virtual DbSet<UserComment> UserComments { get; set; }
-        public virtual DbSet<UserInfo> UserInfoes { get; set; }
         public virtual DbSet<Vocabulary> Vocabularies { get; set; }
+        public virtual DbSet<UserInfo> UserInfoes { get; set; }
     }
 }

@@ -27,6 +27,7 @@ insert into UserComment values (N'lexuankha2409@gmail.com',N'Giao diện',N'Từ
 create table UserInfo(
 	username nvarchar(255) primary key,
 	pass nvarchar(255),
+	dateRegister date,
 	fullname nvarchar(255),
 	dateOfBirth date,
 	sdt int, 
@@ -34,9 +35,13 @@ create table UserInfo(
 	levelStudy nvarchar(255)
 )
 
-insert into UserInfo values (N'lexuankha2409@gmail.com', N'123', N'Lê Xuân Kha', '09/24/1998', 0934104430, N'123/20 Đặng Văn Bi, phường Trường Thọ, quận Thủ Đức, tp Hồ Chí Minh', 'beginer')
+insert into UserInfo values (N'lexuankha2409@gmail.com', N'123', '06/8/2019', N'Lê Xuân Kha', '09/24/1998', 0934104430, N'123/20 Đặng Văn Bi, phường Trường Thọ, quận Thủ Đức, tp Hồ Chí Minh', 'beginer')
+insert into UserInfo values	(N'ngoduckha@gmail.com', N'123', '06/18/2019', N'Ngô Đức Kha', '7/27/1998', 0979896524, N'ngã 5 chuồng chó, quận Tân Bình, tp Hồ Chí Minh', 'beginer')
+insert into UserInfo values	(N'1111111@gmail.com', N'123', '06/19/2019', N'Ngô Đức Kha', '7/27/1998', 0979896524, N'ngã 5 chuồng chó, quận Tân Bình, tp Hồ Chí Minh', 'beginer')
+
 
 create table Vocabulary(
+	id int identity(1,1),
 	word nvarchar(255) primary key,
 	mean nvarchar(255),
 	typeWord nvarchar(255),
@@ -44,3 +49,5 @@ create table Vocabulary(
 	imgURL nvarchar(255),
 	soundURL nvarchar(255)
 )
+
+insert into Vocabulary values (N'morning', N'buổi sáng', N'noun', N'beginer', N'', N'')

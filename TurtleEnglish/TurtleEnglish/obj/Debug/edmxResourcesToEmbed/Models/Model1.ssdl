@@ -24,6 +24,7 @@
     </Key>
     <Property Name="username" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="pass" Type="nvarchar" MaxLength="255" />
+    <Property Name="dateRegister" Type="date" />
     <Property Name="fullname" Type="nvarchar" MaxLength="255" />
     <Property Name="dateOfBirth" Type="date" />
     <Property Name="sdt" Type="int" />

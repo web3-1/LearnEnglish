@@ -11,8 +11,7 @@ namespace TurtleEnglish.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class CommentTopic
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,9 +22,7 @@ namespace TurtleEnglish.Models
     
         public int stt { get; set; }
         public string topic { get; set; }
-        [Required(ErrorMessage = "Please input topic")]
-        [Display(Name = "Topic Name")]
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserComment> UserComments { get; set; }
     }

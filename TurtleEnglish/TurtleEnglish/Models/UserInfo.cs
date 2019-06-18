@@ -16,6 +16,7 @@ namespace TurtleEnglish.Models
     {
         public string username { get; set; }
         public string pass { get; set; }
+        public Nullable<System.DateTime> dateRegister { get; set; }
         public string fullname { get; set; }
         public Nullable<System.DateTime> dateOfBirth { get; set; }
         public Nullable<int> sdt { get; set; }

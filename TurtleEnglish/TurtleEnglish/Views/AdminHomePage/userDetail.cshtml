@@ -1,0 +1,147 @@
+﻿@model TurtleEnglish.Models.UserInfo
+
+@{
+    ViewBag.Title = "userDetail";
+    Layout = "~/Views/Shared/TurtleEnglish_adminLayoutPage.cshtml";
+}
+<div class="right_col" role="main">
+    <div class="row" style="padding: 50px;">
+        <div class="col-md-12" style="padding-left: 150px; padding-right: 150px;">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 style="width: 80%;">Edit Feedback Topic</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+
+                        <li>
+                            <a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <!-- start project list -->
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                <label>User Name</label>
+                                @if (Model.username != null)
+                                {
+                                    <input name="username" value="@Model.username" type="text" class="col-md-12 form-control" readonly />
+                                }
+                                else
+                                {
+                                    <input name="username" value="" type="text" class="col-md-12 form-control" readonly />
+                                }
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    Password
+                                </label>
+                                @if (Model.pass != null)
+                                {
+                                    <input name="pass" value="@Model.pass" type="text" class="col-md-12 form-control" />
+                                }
+                                else
+                                {
+                                    <input name="pass" value="" type="text" class="col-md-12 form-control" />
+                                }
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    Full name
+                                </label>
+                                @if (Model.fullname != null)
+                                {
+                                    <input name="fullname" value="@Model.fullname" type="text" class="col-md-12 form-control" />
+                                }
+                                else
+                                {
+                                    <input name="fullname" value="" type="text" class="col-md-12 form-control" />
+                                }
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    Date of birth
+                                </label>
+                                <div>
+                                    @try
+                                    {
+                                        Model.dateOfBirth.Value.ToString("dd/MM/yyyy");
+                                        <input name="dateOfBirth" value="@Model.dateOfBirth.Value.ToString("dd/MM/yyyy")" type="text" class="col-md-12 form-control" />
+                                    }
+                                    catch
+                                    {
+                                        <input name="dateOfBirth" value="" type="text" class="col-md-12 form-control" />
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    Phone
+                                </label>
+                                @if (Model.sdt != null)
+                                {
+                                    <input name="sdt" value="@Model.sdt" type="text" class="col-md-12 form-control" />
+                                }
+                                else
+                                {
+                                    <input name="sdt" value="" type="text" class="col-md-12 form-control" />
+                                }
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    Address
+                                </label>
+                                @if (Model.addr != null)
+                                {
+                                    <input name="addr" value="@Model.addr" type="text" class="col-md-12 form-control" />
+                                }
+                                else
+                                {
+                                    <input name="addr" value="" type="text" class="col-md-12 form-control" />
+                                }
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    Level
+                                </label>
+                                @if (Model.levelStudy != null)
+                                {
+                                    <input name="levelStudy" value="@Model.levelStudy" type="text" class="col-md-12 form-control" />
+                                }
+                                else
+                                {
+                                    <input name="levelStudy" value="" type="text" class="col-md-12 form-control" />
+                                }
+                            </div>
+
+                            <div style="display: flex;align-items: center;justify-content: center;">
+                                <input onclick="location.href='@Url.Action("userManagement", "AdminHomePage", new {})'" type="button" style="float:right;margin-right:20px; background:#b8b894; border:#b8b894;" class="btn btn-primary" value="Return" />
+                                <button style="float:right;margin-left:20px;" type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+
+                        @Html.Raw(TempData["msg"])
+
+                    }
+
+                    <!-- end project list -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

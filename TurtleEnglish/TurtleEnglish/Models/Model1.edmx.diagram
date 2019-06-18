@@ -7,9 +7,9 @@
       <Diagram DiagramId="0addf6c41c524345975612b960cce654" Name="Diagram1">
         <EntityTypeShape EntityType="LearnEnglishModel.CommentTopic" Width="1.5" PointX="3.625" PointY="0.875" />
         <EntityTypeShape EntityType="LearnEnglishModel.UserComment" Width="1.5" PointX="5.875" PointY="0.5" />
-        <EntityTypeShape EntityType="LearnEnglishModel.UserInfo" Width="1.5" PointX="3.625" PointY="4.25" />
         <EntityTypeShape EntityType="LearnEnglishModel.Vocabulary" Width="1.5" PointX="5.625" PointY="4.25" />
         <AssociationConnector Association="LearnEnglishModel.FK_UserComment_CommentTopic" />
+        <EntityTypeShape EntityType="LearnEnglishModel.UserInfo" Width="1.5" PointX="3.5" PointY="3.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

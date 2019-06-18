@@ -3,12 +3,12 @@
   <EntityContainer Name="LearnEnglishEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CommentTopics" EntityType="LearnEnglishModel.CommentTopic" />
     <EntitySet Name="UserComments" EntityType="LearnEnglishModel.UserComment" />
-    <EntitySet Name="UserInfoes" EntityType="LearnEnglishModel.UserInfo" />
     <EntitySet Name="Vocabularies" EntityType="LearnEnglishModel.Vocabulary" />
     <AssociationSet Name="FK_UserComment_CommentTopic" Association="LearnEnglishModel.FK_UserComment_CommentTopic">
       <End Role="CommentTopic" EntitySet="CommentTopics" />
       <End Role="UserComment" EntitySet="UserComments" />
     </AssociationSet>
+    <EntitySet Name="UserInfoes" EntityType="LearnEnglishModel.UserInfo" />
   </EntityContainer>
   <EntityType Name="CommentTopic">
     <Key>
@@ -29,18 +29,6 @@
     <Property Name="dateComment" Type="DateTime" Precision="0" />
     <Property Name="statusCmt" Type="Boolean" />
     <NavigationProperty Name="CommentTopic" Relationship="LearnEnglishModel.FK_UserComment_CommentTopic" FromRole="UserComment" ToRole="CommentTopic" />
-  </EntityType>
-  <EntityType Name="UserInfo">
-    <Key>
-      <PropertyRef Name="username" />
-    </Key>
-    <Property Name="username" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="pass" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="fullname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="dateOfBirth" Type="DateTime" Precision="0" />
-    <Property Name="sdt" Type="Int32" />
-    <Property Name="addr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="levelStudy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Vocabulary">
     <Key>
@@ -65,4 +53,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="pass" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="dateRegister" Type="DateTime" Precision="0" />
+    <Property Name="fullname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="dateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="sdt" Type="Int32" />
+    <Property Name="addr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="levelStudy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

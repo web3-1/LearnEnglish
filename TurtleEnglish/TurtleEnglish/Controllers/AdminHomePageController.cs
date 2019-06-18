@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -13,18 +14,90 @@ namespace TurtleEnglish.Controllers
         private LearnEnglishEntities db = new LearnEnglishEntities();
         public IEnumerable<CommentTopic> topic { get; set; }
         public IEnumerable<UserComment> cmt { get; set; }
+        public IEnumerable<UserInfo> user { get; set; }
+
+        //danh sách user mới tạo trong vòng 7 ngày gần nhất
+        public IEnumerable<UserInfo> userNewInSevenDays { get; set; }
         // GET: Admin_HomePage
         public ActionResult adminIndex()
         {
             var model = new AdminHomePageController();
             model.topic = db.CommentTopics.ToList();
             model.cmt = db.UserComments.ToList();
+            model.user = db.UserInfoes.ToList();
+
+            //lọc danh sách user mới vào 1 tuần này
+            List<UserInfo> newUser = new List<UserInfo>();
+            foreach (var item in db.UserInfoes.ToList())
+            {
+                try
+                {
+                    TimeSpan time = DateTime.Now - (DateTime)item.dateRegister;
+                    int TongSoNgay = time.Days;
+                    if (TongSoNgay <= 7)
+                        newUser.Add(item);
+                }
+                catch{}
+            }
+            model.userNewInSevenDays = newUser;
+
+
             return View(model);
         }
 
         public ActionResult userManagement()
         {
-            return View();
+            var model = new AdminHomePageController();
+            model.user = db.UserInfoes.ToList();
+            return View(model);
+        }
+
+        public ActionResult userDetail(string username)
+        {   
+            if (username == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            UserInfo userComment = db.UserInfoes.Find(username);
+            if (userComment == null)
+            {
+                return HttpNotFound();
+            }
+            return View(userComment);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult userDetail([Bind(Include = "username,pass,fullname,dateOfBirth,sdt,addr,levelStudy")] UserInfo userUpdated)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var item = db.UserInfoes.SingleOrDefault(x => (x.username == userUpdated.username));
+                item.pass = userUpdated.pass;
+                item.fullname = userUpdated.fullname;
+                item.dateOfBirth = userUpdated.dateOfBirth;
+                item.sdt = userUpdated.sdt;
+                item.addr = userUpdated.addr;
+                item.levelStudy = userUpdated.levelStudy;
+
+                db.SaveChanges();
+                return RedirectToAction("userManagement");
+            }
+            return View(userUpdated);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteUser(string username)
+        {
+            var itemToRemove = db.UserInfoes.SingleOrDefault(x => x.username == username); //returns a single item.
+
+            if (itemToRemove != null)
+            {
+                db.UserInfoes.Remove(itemToRemove);
+                db.SaveChanges();
+            }
+            return RedirectToAction("userManagement");
         }
 
         public ActionResult vocabularyManagement()
@@ -75,7 +148,7 @@ namespace TurtleEnglish.Controllers
                 db.SaveChanges();
                 TempData["msg"] = "<script>alert('Đã thêm topic thành công.');</script>";
             }
-            catch (Exception ex)
+            catch
             {
 
             }
