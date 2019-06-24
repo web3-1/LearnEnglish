@@ -60,13 +60,13 @@ namespace TurtleEnglish.Controllers
             UserInfo user = new UserInfo();
             user.username = username;
             user.pass = pass;
-            user.levelStudy = "beginer";
+            user.levelStudy = "Beginer";
             user.dateRegister = DateTime.Now;
             db.UserInfoes.Add(user);
             db.SaveChanges();
             var list = db.UserInfoes.ToList();
             Session["username"] = username;
-            Session["level"] = "beginer";
+            Session["level"] = "Beginer";
             return RedirectToAction("HomePage", "HomePage");
         }
     }
