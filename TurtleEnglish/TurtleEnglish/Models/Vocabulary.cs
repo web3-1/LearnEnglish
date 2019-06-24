@@ -14,6 +14,7 @@ namespace TurtleEnglish.Models
     
     public partial class Vocabulary
     {
+        public int id { get; set; }
         public string word { get; set; }
         public string mean { get; set; }
         public string typeWord { get; set; }

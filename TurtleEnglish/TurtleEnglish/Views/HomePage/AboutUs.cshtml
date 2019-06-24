@@ -12,6 +12,8 @@
         meaningful words and phrases.
     </p>
     <p class="prepare">Thank you for your attention!</p>
-    @Html.ActionLink("Home", "HomePage", "HomePage", null, new { Style = "color:Red" })
+    @*@Html.ActionLink("Home", "HomePage", "HomePage", null, new { Style = "color:Red" })*@
+    <a class="btn btn-primary" href="@Url.Action("HomePage","HomePage")">Home Page</a>
+</div>
 </div>
 

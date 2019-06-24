@@ -1,21 +1,46 @@
-﻿
+﻿@using TurtleEnglish.Models;
+@using TurtleEnglish.Controllers;
+@model HomePageController
 @{
     ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/TurtleEnglish_layout.cshtml";
 }
 
-<div class="content" style='width:80%; margin:unset'>
-    <h2 style="text-align: left;font-size: 30px; color: red;margin-bottom: 20px;font-family: 'Montserrat', sans-serif;">Please contact the information below</h2>
-    <p class="prepare"><span style="font-size: 17px;"><span style="color:red">Email: </span>Englishturtle@gmail.com</span></p>
-    <p class="prepare"><span style="font-size: 17px"><span style="color:red">Hotline:</span> +84 1222 000 596</span></p>
-    <p class="prepare"><span style="font-size: 17px;"><span style="color:red">Facebook: </span>https://www.facebook.com/englishturtle</span></p></br>
-    <p style="font-weight: bold;font-family: 'Montserrat', sans-serif;"><b>If you have any special requests or messages for us, please enter here</b></p></br>
-    <form action="" method="post">
-        <textarea name="comments" cols="60" rows="10" wrap="off"></textarea>
-        <br>
-        <input type="submit" value="Send" name="submit">
-    </form>
+<div class="formVoca" style="margin-bottom:100px;">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <h2 style="text-align: left;font-size: 30px; color: red;margin-bottom: 20px;font-family: 'Montserrat', sans-serif;">Please contact the information below</h2>
+                    <p class="prepare"><span style="font-size: 17px;"><span style="color:red">Email: </span>Englishturtle@gmail.com</span></p>
+                    <p class="prepare"><span style="font-size: 17px"><span style="color:red">Hotline:</span> +84 1222 000 596</span></p>
+                    <p class="prepare"><span style="font-size: 17px;"><span style="color:red">Facebook: </span>https://www.facebook.com/englishturtle</span></p></br>
+                    <p style="font-weight: bold;font-family: 'Montserrat', sans-serif;"><b>If you have any special requests or messages for us, please enter here</b></p></br>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <form method="post" action="@Url.Action("Addcommemt", "HomePage")">
+                            <div style="background-color:burlywood; padding:10px;">
+                                <label for="heard">Choose topic:</label>
+                                <select name="topic" id="heard" class="form-control" required="">
+                                    <option value="">Choose..</option>
+                                    @foreach (var item in Model.commentTopic)
+                                    {
+                                        <option value="@item.topic">@item.topic</option>
+                                    }
+
+                                </select>
+
+                                <label for="message">Message:</label>
+                                <textarea name="comment" cols="60" rows="5" wrap="off" id="message" required="required" class="form-control" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.." data-parsley-validation-threshold="10"></textarea>
+                                <button type="submit" class="btn btn-primary" value="Send">Send</button>
+                            </div>
+                    </form>
+                </th>
+            </tr>
+        </thead>
+    </table>
 </div>
-
+</div>
 <!-- END CONTENT -->
-

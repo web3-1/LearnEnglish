@@ -1,0 +1,86 @@
+﻿@using TurtleEnglish.Models;
+@using TurtleEnglish.Controllers;
+@model VocabularyController
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/TurtleEnglish_layout.cshtml";
+}
+<script>
+    $(document).ready(function () {
+        // if login -> change name+ href of login : Profile
+        var str = $("#status").text();
+        if (str.trim() !== "")
+            $("#login").text("My Profile").attr("href", "/profile");
+    })
+
+    var y, rotYINT, index;
+    var ny = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var play = [true, true, true, true, true, true, true, true, true, true, true];
+    function rotateYDIV(c) {
+        y = document.getElementById(c);
+        clearInterval(rotYINT);
+        $(c + ' .front').toggleClass('first');
+        $(c + ' .behind').toggleClass('first');
+        rotYINT = setInterval("startYRotate()", 8);
+    }
+    function startYRotate() {
+        ny[index] = ny[index] + 6
+        y.style.transform = "rotateY(" + ny[index] + "deg)"
+        y.style.webkitTransform = "rotateY(" + ny[index] + "deg)"
+        y.style.OTransform = "rotateY(" + ny[index] + "deg)"
+        y.style.MozTransform = "rotateY(" + ny[index] + "deg)"
+        if (ny[index] == 180 || ny[index] == 360) {
+            clearInterval(rotYINT)
+            if (ny[index] >= 360) { ny[index] = 0 }
+        }
+    }
+    function ToggleVoca(c) {
+        //Rotate
+        var th = $(c);
+        index = parseInt(c);
+        rotateYDIV(c);
+        var id = c + c;
+        document.getElementById(id).play();
+    }
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var bSuccess = @ViewBag.Message;
+        if (bSuccess) {
+            alert("your score is " + bSuccess);
+        }
+    });
+</script>
+<div class="formVoca">
+    <table>
+        <tr>
+            <td>
+                <div class="topic" style="font-size: 25px; color: red;margin-bottom: 20px;font-family: 'Montserrat', sans-serif;">Topic: @Session["level"]</div>
+            </td>
+            <td>
+                <div style="font-size: 25px; color: blue;margin-bottom: 20px;font-family: 'Montserrat', sans-serif; float:right"><a href="@Url.Action("Test","Vocabulary")">Go to test</a></div>
+            </td>
+        </tr>
+    </table>
+    @foreach (var item in Model.vocabList)
+    {
+        <div id="@item.id" class="Voca" onclick="ToggleVoca('@item.id');" style="background-color: yellowgreen;">
+            <div class="front first">
+                <img src="@item.imgURL">
+                <h4>@item.word</h4>
+                <p>@item.mean</p>
+            </div>
+            <div class="behind">
+                <img src="@item.imgURL">
+                <p class="ex">Example:</p>
+                <p>@item.word <span style="color:red">@item.mean</span> </p>
+            </div>
+        </div>
+        <audio id="@item.id@item.id">
+            <source src="@item.soundURL" type="audio/mpeg">
+        </audio>
+    }
+</div>
+</div>

@@ -1,0 +1,132 @@
+﻿@model TurtleEnglish.Models.Vocabulary
+
+@{
+    ViewBag.Title = "vocabDetail";
+    Layout = "~/Views/Shared/TurtleEnglish_adminLayoutPage.cshtml";
+}
+
+<div class="right_col" role="main">
+    <div class="row" style="padding: 50px;">
+        <div class="col-md-12" style="padding-left: 150px; padding-right: 150px;">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2 style="width: 80%;">Edit Feedback Topic</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+
+                        <li>
+                            <a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <!-- start project list -->
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                <label>Word</label>
+                                @if (Model.word != null)
+                                {
+                                    <input name="word" value="@Model.word" type="text" class="col-md-12 form-control" readonly />
+                                }
+                                else
+                                {
+                                    <input name="word" value="" type="text" class="col-md-12 form-control" readonly />
+                                }
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    Type
+                                </label>
+                                @if (Model.typeWord != null)
+                                {
+                                    <input name="typeWord" value="@Model.typeWord" type="text" class="col-md-12 form-control" />
+                                }
+                                else
+                                {
+                                    <input name="typeWord" value="" type="text" class="col-md-12 form-control" />
+                                }
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    Mean
+                                </label>
+                                @if (Model.mean != null)
+                                {
+                                    <input name="mean" value="@Model.mean" type="text" class="col-md-12 form-control" />
+                                }
+                                else
+                                {
+                                    <input name="mean" value="" type="text" class="col-md-12 form-control" />
+                                }
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>
+                                    Level
+                                </label>
+                                @if (Model.levelStudy != null)
+                                {
+                                    <input name="levelStudy" value="@Model.levelStudy" type="text" class="col-md-12 form-control" />
+                                }
+                                else
+                                {
+                                    <input name="levelStudy" value="" type="text" class="col-md-12 form-control" />
+                                }
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    ImgURL
+                                </label>
+                                @if (Model.imgURL != null)
+                                {
+                                    <input name="imgURL" value="@Model.imgURL" type="text" class="col-md-12 form-control" />
+                                }
+                                else
+                                {
+                                    <input name="imgURL" value="" type="text" class="col-md-12 form-control" />
+                                }
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    SoundURL
+                                </label>
+                                @if (Model.soundURL != null)
+                                {
+                                    <input name="soundURL" value="@Model.soundURL" type="text" class="col-md-12 form-control" />
+                                }
+                                else
+                                {
+                                    <input name="soundURL" value="" type="text" class="col-md-12 form-control" />
+                                }
+                            </div>
+
+                            <div style="display: flex;align-items: center;justify-content: center;">
+                                <input onclick="location.href='@Url.Action("vocabularyManagement", "AdminHomePage", new {})'" type="button" style="float:right;margin-right:20px; background:#b8b894; border:#b8b894;" class="btn btn-primary" value="Return" />
+                                <button style="float:right;margin-left:20px;" type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+
+                        @Html.Raw(TempData["msg"])
+
+                    }
+
+                    <!-- end project list -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

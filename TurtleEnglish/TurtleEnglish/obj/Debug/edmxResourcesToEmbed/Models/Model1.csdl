@@ -3,12 +3,12 @@
   <EntityContainer Name="LearnEnglishEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CommentTopics" EntityType="LearnEnglishModel.CommentTopic" />
     <EntitySet Name="UserComments" EntityType="LearnEnglishModel.UserComment" />
-    <EntitySet Name="Vocabularies" EntityType="LearnEnglishModel.Vocabulary" />
     <AssociationSet Name="FK_UserComment_CommentTopic" Association="LearnEnglishModel.FK_UserComment_CommentTopic">
       <End Role="CommentTopic" EntitySet="CommentTopics" />
       <End Role="UserComment" EntitySet="UserComments" />
     </AssociationSet>
     <EntitySet Name="UserInfoes" EntityType="LearnEnglishModel.UserInfo" />
+    <EntitySet Name="Vocabularies" EntityType="LearnEnglishModel.Vocabulary" />
   </EntityContainer>
   <EntityType Name="CommentTopic">
     <Key>
@@ -29,17 +29,6 @@
     <Property Name="dateComment" Type="DateTime" Precision="0" />
     <Property Name="statusCmt" Type="Boolean" />
     <NavigationProperty Name="CommentTopic" Relationship="LearnEnglishModel.FK_UserComment_CommentTopic" FromRole="UserComment" ToRole="CommentTopic" />
-  </EntityType>
-  <EntityType Name="Vocabulary">
-    <Key>
-      <PropertyRef Name="word" />
-    </Key>
-    <Property Name="word" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="mean" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="typeWord" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="levelStudy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="imgURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="soundURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_UserComment_CommentTopic">
     <End Type="LearnEnglishModel.CommentTopic" Role="CommentTopic" Multiplicity="0..1" />
@@ -65,5 +54,17 @@
     <Property Name="sdt" Type="Int32" />
     <Property Name="addr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="levelStudy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Vocabulary">
+    <Key>
+      <PropertyRef Name="word" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="word" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="mean" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="typeWord" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="levelStudy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="imgURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="soundURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

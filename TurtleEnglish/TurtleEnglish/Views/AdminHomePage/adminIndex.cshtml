@@ -7,6 +7,7 @@
 }
 
 
+
 <div class="right_col" role="main">
     <!-- top tiles -->
     <div class="row tile_count">
@@ -17,7 +18,7 @@
         </div>
         <div class="col-sm-4 col-xs-6 tile_stats_count" style="overflow: hidden;text-align: center;">
             <span class="count_top"><i class="fa fa-database"></i> Total Vocabulary</span>
-            <div class="count">200</div>
+            <div class="count">@Model.vocab.Count()</div>
         </div>
         <div class="col-sm-4 col-xs-6 tile_stats_count" style="overflow: hidden;text-align: center;">
             <span class="count_top"><i class="fa fa-comment"></i> Feedback</span>
@@ -30,7 +31,7 @@
         <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="x_panel tile fixed_height_320 overflow_hidden">
                 <div class="x_title">
-                    <h2>User</h2>
+                    <h2>User's Level</h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li>
                             <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -45,14 +46,14 @@
                     <table class="" style="width:100%">
                         <tr>
                             <th style="width:37%;">
-                                <p>Top 5</p>
+                                <p></p>
                             </th>
                             <th>
                                 <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                                    <p class="">Device</p>
+                                    <p class="">Level</p>
                                 </div>
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                                    <p class="">Progress</p>
+                                    <p class="">Percent</p>
                                 </div>
                             </th>
                         </tr>
@@ -62,36 +63,15 @@
                             </td>
                             <td>
                                 <table class="tile_info">
-                                    <tr>
-                                        <td>
-                                            <p><i class="fa fa-square blue"></i>IOS </p>
-                                        </td>
-                                        <td>30%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p><i class="fa fa-square green"></i>Android </p>
-                                        </td>
-                                        <td>10%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p><i class="fa fa-square purple"></i>Blackberry </p>
-                                        </td>
-                                        <td>20%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p><i class="fa fa-square aero"></i>Symbian </p>
-                                        </td>
-                                        <td>15%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p><i class="fa fa-square red"></i>Others </p>
-                                        </td>
-                                        <td>30%</td>
-                                    </tr>
+                                    @foreach (var item in Model._levelStudyStatistics)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <p><i class="fa fa-square @item.color"></i>@item.level </p>
+                                            </td>
+                                            <td>@item.percent%</td>
+                                        </tr>   
+                                     }
                                 </table>
                             </td>
                         </tr>
@@ -115,99 +95,196 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                    <div class="widget_summary">
-                        <div class="w_left w_25">
-                            <span>Level 1</span>
-                        </div>
-                        <div class="w_center w_55">
-                            <div class="progress">
-                                <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-                                    <span class="sr-only">25% Complete</span>
+                    @foreach (var item in Model._vocabLevelStatistics)
+                    {
+                        <div class="widget_summary">
+                            <div class="w_left w_25">
+                                <span>@item.level</span>
+                            </div>
+                            <div class="w_center w_55">
+                                <div class="progress">
+                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: @item.percent%;">
+                                        <span class="sr-only">@item.percent%</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="w_right w_20">
-                            <span>50w</span>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="widget_summary">
-                        <div class="w_left w_25">
-                            <span>Level 2</span>
-                        </div>
-                        <div class="w_center w_55">
-                            <div class="progress">
-                                <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
-                                    <span class="sr-only">30% Complete</span>
-                                </div>
+                            <div class="w_right w_20">
+                                <span>@item.sum</span>
                             </div>
+                            <div class="clearfix"></div>
                         </div>
-                        <div class="w_right w_20">
-                            <span>60w</span>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="widget_summary">
-                        <div class="w_left w_25">
-                            <span>Level 3</span>
-                        </div>
-                        <div class="w_center w_55">
-                            <div class="progress">
-                                <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-                                    <span class="sr-only">25% Complete</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w_right w_20">
-                            <span>50w</span>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="widget_summary">
-                        <div class="w_left w_25">
-                            <span>Level 4</span>
-                        </div>
-                        <div class="w_center w_55">
-                            <div class="progress">
-                                <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
-                                    <span class="sr-only">20% Complete</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w_right w_20">
-                            <span>40w</span>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                     }
                 </div>
             </div>
         </div>
 
 
-        <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Donut Graph</h2>
+                    <h2>Pie Area Chart <small>Sessions</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li>
                             <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
+                       
                         <li>
                             <a class="close-link"><i class="fa fa-close"></i></a>
                         </li>
                     </ul>
                     <div class="clearfix"></div>
                 </div>
-                <div class="x_content" style="display: block;">
-
-                    <div id="echart_donut" style="height: 350px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative; background-color: transparent;" _echarts_instance_="ec_1559379003709">
-                        <div style="position: relative; overflow: hidden; width: 300px; height: 350px; cursor: default;"><canvas width="300" height="350" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 300px; height: 350px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas></div>
-                        <div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(0, 0, 0, 0.5); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px/21px Arial, Verdana, sans-serif; padding: 5px; left: -39.6563px; top: 105px;">Access to the resource <br>Direct Access : 335 (13.08%)</div>
-                    </div>
-
+                <div class="x_content">
+                    <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                    <canvas id="polarArea" style="width: 300px; height: 150px;"></canvas>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+@*canvas dougnut*@
+@*<script>
+    function init_chart_doughnut() {
+    if ("undefined" != typeof Chart && (console.log("init_chart_doughnut"), $(".canvasDoughnut").length)) {
+        var a = {
+            type: "doughnut",
+            tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+            data: {
+                labels: ["Symbian", "Blackberry", "Other", "Android", "IOS"],
+                datasets: [{
+                    data: [15, 20, 30, 10, 30],
+                    backgroundColor: ["#BDC3C7", "#9B59B6", "#E74C3C", "#26B99A", "#3498DB"],
+                    hoverBackgroundColor: ["#CFD4D8", "#B370CF", "#E95E4F", "#36CAAB", "#49A9EA"]
+                }]
+            },
+            options: {
+                legend: !1,
+                responsive: !1
+            }
+        };
+        $(".canvasDoughnut").each(function () {
+            var b = $(this);
+            new Chart(b, a)
+        })
+    }
+}
+</script>*@
+<script>
+
+    function init_chart_doughnut() {
+        //var name_array = new Array("Symbian",
+        //    "Blackberry",
+        //    "Other",
+        //    "Android",
+        //    "IOS");
+        var arrayLevel = JSON.parse('@Html.Raw(Json.Encode(@Model.UserLevel))')
+        var sumOfLevel = JSON.parse('@Html.Raw(Json.Encode(@Model.sumOfUserAtALevel))')
+        if (typeof (Chart) === 'undefined') { return; }
+        console.log('init_chart_doughnut');
+
+        if ($('.canvasDoughnut').length) {
+
+            var chart_doughnut_settings = {
+                type: 'doughnut',
+                tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+                data: {
+                    labels: arrayLevel,
+                    datasets: [{
+                        data: sumOfLevel,
+                        backgroundColor: [
+                            "#BDC3C7",
+                            "#9B59B6",
+                            "#E74C3C",
+                            "#26B99A",
+                            "#3498DB"
+                        ],
+                        hoverBackgroundColor: [
+                            "#CFD4D8",
+                            "#B370CF",
+                            "#E95E4F",
+                            "#36CAAB",
+                            "#49A9EA"
+                        ]
+                    }]
+                },
+                options: {
+                    legend: false,
+                    responsive: false
+                }
+            }
+
+            $('.canvasDoughnut').each(function () {
+
+                var chart_element = $(this);
+                var chart_doughnut = new Chart(chart_element, chart_doughnut_settings);
+
+            });
+
+        }
+
+    }
+</script>
+<script>
+    function init_charts() {
+       
+        if (console.log("run_charts  typeof [" + typeof Chart + "]"), "undefined" != typeof Chart) {
+            if (console.log("init_charts"), Chart.defaults.global.legend = {
+                enabled: !1
+            }, $("#canvas_line").length) {
+                new Chart(document.getElementById("canvas_line"), {
+                    type: "line",
+                    data: {
+                        labels: ["January", "February", "March", "April", "May", "June", "July"],
+                        datasets: [{
+                            label: "My First dataset",
+                            backgroundColor: "rgba(38, 185, 154, 0.31)",
+                            borderColor: "rgba(38, 185, 154, 0.7)",
+                            pointBorderColor: "rgba(38, 185, 154, 0.7)",
+                            pointBackgroundColor: "rgba(38, 185, 154, 0.7)",
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderColor: "rgba(220,220,220,1)",
+                            pointBorderWidth: 1,
+                            data: [31, 74, 6, 39, 20, 85, 7]
+                        }, {
+                            label: "My Second dataset",
+                            backgroundColor: "rgba(3, 88, 106, 0.3)",
+                            borderColor: "rgba(3, 88, 106, 0.70)",
+                            pointBorderColor: "rgba(3, 88, 106, 0.70)",
+                            pointBackgroundColor: "rgba(3, 88, 106, 0.70)",
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderColor: "rgba(151,187,205,1)",
+                            pointBorderWidth: 1,
+                            data: [82, 23, 66, 9, 99, 4, 2]
+                        }]
+                    }
+                })
+            }
+
+            if ($("#polarArea").length) {
+                 var feedbackTopic = JSON.parse('@Html.Raw(Json.Encode(@Model.FeedbackName))')
+                 var sumFeedbackTopic = JSON.parse('@Html.Raw(Json.Encode(Model.sumFeedbackTopic))')
+                var f = document.getElementById("polarArea"),
+                    i = {
+                        datasets: [{
+                            data: sumFeedbackTopic,
+                            backgroundColor: ["#455C73", "#9B59B6", "#BDC3C7", "#26B99A", "#3498DB"],
+                            label: "My dataset"
+                        }],
+                        labels: feedbackTopic
+                    };
+                new Chart(f, {
+                    data: i,
+                    type: "polarArea",
+                    options: {
+                        scale: {
+                            ticks: {
+                                beginAtZero: !0
+                            }
+                        }
+                    }
+                })
+            }
+        }
+    }
+</script>

@@ -154,9 +154,11 @@
     <Compile Include="Controllers\AdminHomePageController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\VocabularyControllerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Colors.cs" />
     <Compile Include="Models\CommentTopic.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -175,6 +177,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\StatisticsClass.cs" />
     <Compile Include="Models\UserComment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -259,17 +262,6 @@
     <Content Include="img\theater.jpg" />
     <Content Include="img\turtle.jpeg" />
     <Content Include="img\water.jpg" />
-    <Content Include="Libs\Gentelella\css\custom.css" />
-    <Content Include="Libs\Gentelella\css\custom.min.css" />
-    <Content Include="Libs\Gentelella\images\back_disabled.png" />
-    <Content Include="Libs\Gentelella\images\back_enabled.png" />
-    <Content Include="Libs\Gentelella\images\back_enabled_hover.png" />
-    <Content Include="Libs\Gentelella\images\forward_disabled.png" />
-    <Content Include="Libs\Gentelella\images\forward_enabled.png" />
-    <Content Include="Libs\Gentelella\images\forward_enabled_hover.png" />
-    <Content Include="Libs\Gentelella\images\loading.gif" />
-    <Content Include="Libs\Gentelella\js\custom.js" />
-    <Content Include="Libs\Gentelella\js\custom.min.js" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -409,6 +401,56 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="sound\applaud.mp3" />
+    <Content Include="sound\balance.mp3" />
+    <Content Include="sound\biodiversity.mp3" />
+    <Content Include="sound\book.mp3" />
+    <Content Include="sound\brush_your_teeth.mp3" />
+    <Content Include="sound\buy.mp3" />
+    <Content Include="sound\circus.mp3" />
+    <Content Include="sound\climate_change.mp3" />
+    <Content Include="sound\close.mp3" />
+    <Content Include="sound\comb.mp3" />
+    <Content Include="sound\cook.mp3" />
+    <Content Include="sound\crayon.mp3" />
+    <Content Include="sound\decompose.mp3" />
+    <Content Include="sound\delete.mp3" />
+    <Content Include="sound\eat_in.mp3" />
+    <Content Include="sound\eat_out.mp3" />
+    <Content Include="sound\ecology.mp3" />
+    <Content Include="sound\eraser.mp3" />
+    <Content Include="sound\exhibit.mp3" />
+    <Content Include="sound\feed_on.mp3" />
+    <Content Include="sound\get_up.mp3" />
+    <Content Include="sound\global_warning.mp3" />
+    <Content Include="sound\glue.mp3" />
+    <Content Include="sound\go_home.mp3" />
+    <Content Include="sound\helpline.mp3" />
+    <Content Include="sound\homework.mp3" />
+    <Content Include="sound\insert.mp3" />
+    <Content Include="sound\land.mp3" />
+    <Content Include="sound\merge.mp3" />
+    <Content Include="sound\monitor.mp3" />
+    <Content Include="sound\mouse_pad.mp3" />
+    <Content Include="sound\oil_slick.mp3" />
+    <Content Include="sound\open.mp3" />
+    <Content Include="sound\opera.mp3" />
+    <Content Include="sound\orchestra.mp3" />
+    <Content Include="sound\ozone_layer.mp3" />
+    <Content Include="sound\pack.mp3" />
+    <Content Include="sound\paper.mp3" />
+    <Content Include="sound\pen.mp3" />
+    <Content Include="sound\pencil.mp3" />
+    <Content Include="sound\pencil_sharpener.mp3" />
+    <Content Include="sound\perform.mp3" />
+    <Content Include="sound\play.mp3" />
+    <Content Include="sound\pollute.mp3" />
+    <Content Include="sound\printer.mp3" />
+    <Content Include="sound\scanner.mp3" />
+    <Content Include="sound\scene.mp3" />
+    <Content Include="sound\scissors.mp3" />
+    <Content Include="sound\stadium.mp3" />
+    <Content Include="sound\theater.mp3" />
     <Content Include="Style\AdminPageStyle\build\css\custom.css" />
     <Content Include="Style\AdminPageStyle\build\css\custom.min.css" />
     <Content Include="Style\AdminPageStyle\build\images\back_disabled.png" />
@@ -4086,7 +4128,6 @@
     <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Style\LoginStyle\vendor\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="Views\HomePage\Contact.cshtml" />
     <Content Include="Style\AdminPageStyle\vendors\animate.css\.bower.json" />
     <Content Include="Style\AdminPageStyle\vendors\animate.css\animate-config.json" />
     <Content Include="Style\AdminPageStyle\vendors\animate.css\bower.json" />
@@ -5023,9 +5064,17 @@
     <Content Include="Views\AdminHomePage\feedbackEdit.cshtml" />
     <Content Include="Views\AdminHomePage\commentEdit.cshtml" />
     <Content Include="Views\AdminHomePage\userDetail.cshtml" />
+    <Content Include="Views\AdminHomePage\vocabDetail.cshtml" />
+    <Content Include="Views\AdminHomePage\vocabAdd.cshtml" />
+    <Content Include="Views\Vocabulary\Index.cshtml" />
+    <Content Include="Views\Vocabulary\Test.cshtml" />
+    <Content Include="Views\HomePage\Profile.cshtml" />
+    <Content Include="Views\HomePage\Contact.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\VocabularyController\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

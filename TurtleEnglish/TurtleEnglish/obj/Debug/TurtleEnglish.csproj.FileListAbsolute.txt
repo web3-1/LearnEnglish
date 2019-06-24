@@ -173,3 +173,8 @@ E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\EntityFramework.d
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\EntityFramework.SqlServer.dll
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\EntityFramework.xml
 E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\EntityFramework.SqlServer.xml
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\System.Diagnostics.DiagnosticSource.dll
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AI.PerfCounterCollector.xml
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\pttkPM_277_278\LearnEnglish\TurtleEnglish\TurtleEnglish\bin\System.Diagnostics.DiagnosticSource.xml

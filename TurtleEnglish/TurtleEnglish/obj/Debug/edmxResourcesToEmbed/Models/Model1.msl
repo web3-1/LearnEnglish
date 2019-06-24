@@ -21,18 +21,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Vocabularies">
-      <EntityTypeMapping TypeName="LearnEnglishModel.Vocabulary">
-        <MappingFragment StoreEntitySet="Vocabulary">
-          <ScalarProperty Name="soundURL" ColumnName="soundURL" />
-          <ScalarProperty Name="imgURL" ColumnName="imgURL" />
-          <ScalarProperty Name="levelStudy" ColumnName="levelStudy" />
-          <ScalarProperty Name="typeWord" ColumnName="typeWord" />
-          <ScalarProperty Name="mean" ColumnName="mean" />
-          <ScalarProperty Name="word" ColumnName="word" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="UserInfoes">
       <EntityTypeMapping TypeName="LearnEnglishModel.UserInfo">
         <MappingFragment StoreEntitySet="UserInfo">
@@ -44,6 +32,19 @@
           <ScalarProperty Name="dateRegister" ColumnName="dateRegister" />
           <ScalarProperty Name="pass" ColumnName="pass" />
           <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vocabularies">
+      <EntityTypeMapping TypeName="LearnEnglishModel.Vocabulary">
+        <MappingFragment StoreEntitySet="Vocabulary">
+          <ScalarProperty Name="soundURL" ColumnName="soundURL" />
+          <ScalarProperty Name="imgURL" ColumnName="imgURL" />
+          <ScalarProperty Name="levelStudy" ColumnName="levelStudy" />
+          <ScalarProperty Name="typeWord" ColumnName="typeWord" />
+          <ScalarProperty Name="mean" ColumnName="mean" />
+          <ScalarProperty Name="word" ColumnName="word" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

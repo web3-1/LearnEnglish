@@ -35,6 +35,7 @@
     <Key>
       <PropertyRef Name="word" />
     </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="word" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="mean" Type="nvarchar" MaxLength="255" />
     <Property Name="typeWord" Type="nvarchar" MaxLength="255" />

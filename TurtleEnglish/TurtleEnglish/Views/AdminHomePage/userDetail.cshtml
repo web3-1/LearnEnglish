@@ -4,6 +4,7 @@
     ViewBag.Title = "userDetail";
     Layout = "~/Views/Shared/TurtleEnglish_adminLayoutPage.cshtml";
 }
+
 <div class="right_col" role="main">
     <div class="row" style="padding: 50px;">
         <div class="col-md-12" style="padding-left: 150px; padding-right: 150px;">
@@ -72,13 +73,13 @@
 
                             <div class="form-group">
                                 <label>
-                                    Date of birth
+                                    Date of birth (MM/dd/yyyy)
                                 </label>
                                 <div>
                                     @try
                                     {
                                         Model.dateOfBirth.Value.ToString("dd/MM/yyyy");
-                                        <input name="dateOfBirth" value="@Model.dateOfBirth.Value.ToString("dd/MM/yyyy")" type="text" class="col-md-12 form-control" />
+                                        <input name="dateOfBirth" value="@Model.dateOfBirth.Value.ToString("MM/dd/yyyy")" type="text" class="col-md-12 form-control" />
                                     }
                                     catch
                                     {
